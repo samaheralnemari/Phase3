@@ -1,0 +1,45 @@
+﻿@model IEnumerable<laptops.Product>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Pricing</h1>
+        <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+    </div>*@
+@*@using (Html.BeginForm("AddToCart", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="container">
+            <div class="card-deck mb-3 text-center">
+                @Html.Raw(ViewBag.ProductData)
+            </div>
+        </div>
+    }*@
+
+@{int i = 0;}
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <p style="display: none;">@item.ProductID</p><img src="~/Image/@Url.Content(item.ProductImage)" width='200' height='200' alt=''>
+                <p>@item.ProductName</p>
+                <p style='color: red;'>@item.ProductPrice SR</p>
+                @*@if (TempData["Name"] != null)
+                    {*@
+                <a class="btn btn-primary" href="@Url.Action("AddToCart", "Home", new { id = item.ProductID })">Add To Cart</a>
+
+                @*}*@
+            </div>
+        </div>
+        @*</div>*@
+        if (i % 3 == 0)
+        {
+            <br />
+        }
+        i++;
+    }
+    </div>

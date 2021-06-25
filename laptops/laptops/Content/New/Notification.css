@@ -1,0 +1,74 @@
+﻿.notification {
+    /*background-color: #555;*/
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+    /*.notification:hover {
+        background: red;
+    }*/
+
+    .notification .badge {
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        background: red;
+        color: white;
+    }
+
+.notification {
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+    .notification .badge {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
+
+.button {
+    background-color: #e3e2e1;
+    border: none;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /*font-ize: 16px;*/
+    margin: 1px 1px;
+}
+
+.button1 {
+    border-radius: 2px;
+}
+
+.button2 {
+    border-radius: 4px;
+}
+
+.button3 {
+    border-radius: 8px;
+}
+
+.button4 {
+    border-radius: 12px;
+}
+
+.button5 {
+    border-radius: 50%;
+}

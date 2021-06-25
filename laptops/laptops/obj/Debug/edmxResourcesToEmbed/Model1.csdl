@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LaptopsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LaptopsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="LaptopsModel.Brand" />
+    <EntitySet Name="Customers" EntityType="LaptopsModel.Customer" />
+    <EntitySet Name="CustomerOrder_Mapping" EntityType="LaptopsModel.CustomerOrder_Mapping" />
+    <EntitySet Name="Orders" EntityType="LaptopsModel.Order" />
+    <EntitySet Name="Products" EntityType="LaptopsModel.Product" />
+  </EntityContainer>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerStatus" Type="Boolean" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CustomerOrder_Mapping">
+    <Key>
+      <PropertyRef Name="CustomerOrderID" />
+    </Key>
+    <Property Name="CustomerOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderPrice" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="ProductPrice" Type="Int32" />
+    <Property Name="ProductDiscount" Type="Int32" />
+    <Property Name="ProductImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

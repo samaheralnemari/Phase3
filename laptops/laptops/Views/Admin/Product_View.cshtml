@@ -1,0 +1,64 @@
+﻿@model IEnumerable<laptops.Product>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Product_Add")
+</p>
+<br/>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDiscount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDiscount)
+            </td>
+            <td>
+                <img src="~/Image/@item.ProductImage" width="50" height="50"/>
+                @*@Html.DisplayFor(modelItem => item.ProductImage)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.ProductID }) |*@
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.ProductID })*@
+            </td>
+        </tr>
+    }
+
+</table>
